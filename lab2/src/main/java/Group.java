@@ -7,9 +7,11 @@ public class Group {
 
     public Group(int number, int ... data) {
         this.number = number;
-        this.data = data;
+//        this.data = data;
+        this.data = new int[data.length];
+        for(int i = 0;i < data.length;i++)
+            this.data[i] = data[i];
     }
-
 
     public int getNumber() {
         return number;
