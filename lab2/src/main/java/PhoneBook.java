@@ -6,14 +6,13 @@ import java.util.Map;
 public class PhoneBook extends HashMap<Human, List<String>> {
 
     public void put(Human key, String number){
-        for(Human h:keySet())
-            if(h.equals(key)) {
-                get(h).add(number);
-                return;
-            }
-        List<String> blay = new ArrayList<String>();
-        blay.add(number);
-        super.put(key, blay);
+        if(this.containsKey(key)){
+            this.get(key).add(number);
+        } else {
+            List<String> numbers = new ArrayList<String>();
+            numbers.add(number);
+            this.put(key, numbers);
+        }
     }
 
     public void remove(Human key,String number){

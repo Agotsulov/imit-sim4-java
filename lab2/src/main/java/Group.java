@@ -2,23 +2,22 @@ import java.util.Arrays;
 
 public class Group {
 
-    private int number;
+    private int id;
     private int data[];
 
-    public Group(int number, int ... data) {
-        this.number = number;
-//        this.data = data;
+    public Group(int id, int ... data) {
+        this.id = id;
         this.data = new int[data.length];
         for(int i = 0;i < data.length;i++)
             this.data[i] = data[i];
     }
 
-    public int getNumber() {
-        return number;
+    public int getId() {
+        return id;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int[] getData() {
@@ -36,13 +35,13 @@ public class Group {
 
         Group group = (Group) o;
 
-        if (getNumber() != group.getNumber()) return false;
+        if (getId() != group.getId()) return false;
         return Arrays.equals(getData(), group.getData());
     }
 
     @Override
     public int hashCode() {
-        int result = getNumber();
+        int result = getId();
         result = 31 * result + Arrays.hashCode(getData());
         return result;
     }

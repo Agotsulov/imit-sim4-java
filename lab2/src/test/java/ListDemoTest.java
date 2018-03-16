@@ -1,6 +1,5 @@
 import org.junit.Test;
 
-import javax.swing.event.ListDataEvent;
 import java.util.*;
 
 import static org.junit.Assert.*;
@@ -10,6 +9,7 @@ public class ListDemoTest {
     @Test
     public void found() throws Exception {
         List<String> in = new ArrayList<String>();
+        assertEquals(0,ListDemo.found(in, 'a'));
         in.add("abab");
         in.add("124b");
         in.add("a125b");

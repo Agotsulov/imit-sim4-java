@@ -9,7 +9,7 @@ public class Data implements Iterable {
         this.name = name;
         this.groups = new Group[groups.length];
         for(int i = 0;i < groups.length;i++)
-            this.groups[i] = new Group(groups[i].getNumber(), groups[i].getData());
+            this.groups[i] = new Group(groups[i].getId(), groups[i].getData());
     }
 
     public String getName() {
@@ -26,7 +26,7 @@ public class Data implements Iterable {
 
     public void setGroups(Group[] groups) {
         for(int i = 0;i < groups.length;i++)
-            this.groups[i] = new Group(groups[i].getNumber(), groups[i].getData());
+            this.groups[i] = new Group(groups[i].getId(), groups[i].getData());
     }
 
     public Iterator iterator() {

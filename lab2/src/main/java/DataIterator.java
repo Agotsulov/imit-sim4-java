@@ -17,12 +17,12 @@ public class DataIterator implements Iterator{
     public Integer next() {
         if(hasNext()) {
             int result = data.getGroups()[groupIndex].getData()[currentIndex];
+            //System.out.println(" i = " + currentIndex + " g = " + groupIndex + " v = " + result);
             currentIndex++;
             if(currentIndex >= data.getGroups()[groupIndex].getData().length) {
                 groupIndex++;
                 currentIndex = 0;
             }
-            System.out.println(currentIndex + " " + groupIndex);
             return result;
         } else
             return null;
@@ -31,4 +31,6 @@ public class DataIterator implements Iterator{
     public void remove() {
         throw new UnsupportedOperationException();
     }
+
+    public int currentGroup(){ return groupIndex; }
 }
